@@ -1,0 +1,904 @@
+{
+    "clients": [
+        {
+            "client_name": "Kareem Family",
+            "month": "2026-01",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 3500000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 700000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1200000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 650000
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 250000
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 200000
+                }
+            ]
+        },
+        {
+            "client_name": "Kareem Family",
+            "month": "2026-02",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 3600000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 800000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1250000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 680000
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 260000
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 220000
+                }
+            ]
+        },
+        {
+            "client_name": "Kareem Family",
+            "month": "2026-03",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 3650000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 600000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1300000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 700000
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 280000
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 180000
+                }
+            ]
+        },
+        {
+            "client_name": "Kareem Family",
+            "month": "2026-04",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 3700000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 900000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1350000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 720000
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 270000
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 250000
+                }
+            ]
+        },
+        {
+            "client_name": "Kareem Family",
+            "month": "2026-05",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 3750000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 750000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1400000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 750000
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 300000
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 230000
+                }
+            ]
+        },
+        {
+            "client_name": "Khald Family",
+            "month": "2026-01",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 3150000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 630000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1080000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 585000
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 225000
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 180000
+                }
+            ]
+        },
+        {
+            "client_name": "Khald Family",
+            "month": "2026-02",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 3240000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 720000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1125000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 612000
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 234000
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 198000
+                }
+            ]
+        },
+        {
+            "client_name": "Khald Family",
+            "month": "2026-03",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 3285000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 540000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1170000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 630000
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 252000
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 162000
+                }
+            ]
+        },
+        {
+            "client_name": "Khald Family",
+            "month": "2026-04",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 3330000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 810000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1215000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 648000
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 243000
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 225000
+                }
+            ]
+        },
+        {
+            "client_name": "Khald Family",
+            "month": "2026-05",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 3375000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 675000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1260000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 675000
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 270000
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 207000
+                }
+            ]
+        },
+        {
+            "client_name": "Ali Family",
+            "month": "2026-01",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 2730000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 546000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 936000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 507000
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 195000
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 156000
+                }
+            ]
+        },
+        {
+            "client_name": "Ali Family",
+            "month": "2026-02",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 2808000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 624000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 975000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 530400
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 202800
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 171600
+                }
+            ]
+        },
+        {
+            "client_name": "Ali Family",
+            "month": "2026-03",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 2847000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 468000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1014000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 546000
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 218400
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 140400
+                }
+            ]
+        },
+        {
+            "client_name": "Ali Family",
+            "month": "2026-04",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 2886000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 702000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1053000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 561600
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 210600
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 195000
+                }
+            ]
+        },
+        {
+            "client_name": "Ali Family",
+            "month": "2026-05",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 2925000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 585000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1092000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 585000
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 234000
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 179400
+                }
+            ]
+        },
+        {
+            "client_name": "Hassan Workshop",
+            "month": "2026-01",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 4025000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 805000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1380000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 747500
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 287500
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 230000
+                }
+            ]
+        },
+        {
+            "client_name": "Hassan Workshop",
+            "month": "2026-02",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 4140000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 920000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1437500
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 782000
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 299000
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 253000
+                }
+            ]
+        },
+        {
+            "client_name": "Hassan Workshop",
+            "month": "2026-03",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 4197500
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 690000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1495000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 805000
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 322000
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 207000
+                }
+            ]
+        },
+        {
+            "client_name": "Hassan Workshop",
+            "month": "2026-04",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 4255000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 1035000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1552500
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 828000
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 310500
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 287500
+                }
+            ]
+        },
+        {
+            "client_name": "Hassan Workshop",
+            "month": "2026-05",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 4312500
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 862500
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1610000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 862500
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 345000
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 264500
+                }
+            ]
+        },
+        {
+            "client_name": "Omar Trading",
+            "month": "2026-01",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 4550000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 910000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1560000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 845000
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 325000
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 260000
+                }
+            ]
+        },
+        {
+            "client_name": "Omar Trading",
+            "month": "2026-02",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 4680000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 1040000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1625000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 884000
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 338000
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 286000
+                }
+            ]
+        },
+        {
+            "client_name": "Omar Trading",
+            "month": "2026-03",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 4745000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 780000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1690000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 910000
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 364000
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 234000
+                }
+            ]
+        },
+        {
+            "client_name": "Omar Trading",
+            "month": "2026-04",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 4810000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 1170000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1755000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 936000
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 351000
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 325000
+                }
+            ]
+        },
+        {
+            "client_name": "Omar Trading",
+            "month": "2026-05",
+            "income": [
+                {
+                    "source": "Salary",
+                    "amount": 4875000
+                },
+                {
+                    "source": "Freelance",
+                    "amount": 975000
+                }
+            ],
+            "expenses": [
+                {
+                    "source": "Rent",
+                    "category": "Rent",
+                    "amount": 1820000
+                },
+                {
+                    "source": "Food",
+                    "category": "Food",
+                    "amount": 975000
+                },
+                {
+                    "source": "Transport",
+                    "category": "Transport",
+                    "amount": 390000
+                },
+                {
+                    "source": "Entertainment",
+                    "category": "Entertainment",
+                    "amount": 299000
+                }
+            ]
+        }
+    ]
+}
