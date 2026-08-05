@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+
+instance/
+.env
+
+migrations/__pycache__/
+
+storage/uploads/*
+storage/reports/*
