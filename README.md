@@ -151,13 +151,12 @@ http://localhost:3000
       "month": "2026-01",
       "income": [
         {
-          "title": "Salary",
+          "source": "Salary",
           "amount": 3500000
         }
       ],
       "expenses": [
         {
-          "title": "Rent",
           "category": "Rent",
           "amount": 1200000
         }
