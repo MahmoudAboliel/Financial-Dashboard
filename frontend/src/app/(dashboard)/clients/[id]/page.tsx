@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 
 import { getClient } from "@/services/client.service";
 import ClientDetails from "@/components/clients/ClientDetails";
+import PageAnimation from "@/components/shared/PageAnimation";
 
 interface ClientPageProps {
     params: Promise<{
@@ -21,14 +22,14 @@ export default async function ClientPage({
         notFound();
     }
 
-    try {
-        const client = await getClient(clientId);
+    const client = await getClient(clientId);
 
-        return (
-            // eslint-disable-next-line react-hooks/error-boundaries
+    if (!client) return notFound();
+    
+    return (
+        <PageAnimation>
             <ClientDetails client={client} />
-        );
-    } catch {
-        notFound();
-    }
+        </PageAnimation>
+    );
+    
 }

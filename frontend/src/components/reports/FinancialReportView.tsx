@@ -6,6 +6,10 @@ import {
     Download,
     Mail,
     Phone,
+    TrendingUp,
+    TrendingDown,
+     Wallet,
+    Percent
 } from "lucide-react";
 
 import {
@@ -31,13 +35,15 @@ import {
 } from "@/services/client.service";
 
 import {
-    Cell,
     Legend,
     Pie,
     PieChart,
     ResponsiveContainer,
     Tooltip,
 } from "recharts";  
+import AnimatedSummaryCards, { AnimatedSummaryCard } from "../shared/AnimatedSummaryCards";
+import SummaryCard from "../dashboard/SummaryCard";
+import AnimatedCard from "../shared/AnimatedCard";
 
 interface FinancialReportViewProps {
     report: FinancialReport;
@@ -58,6 +64,33 @@ export default function FinancialReportView({
         ...item,
         fill: `var(--chart-${(index % 5) + 1})`
     }))
+
+    const cardsData = [
+        {
+            title: "Total Income",
+            value: formatCurrency(report.summary.total_income),
+            icon: TrendingUp,
+            description: "Total recorded income"
+        },
+        {
+            title: "Total Expenses",
+            value: formatCurrency(report.summary.total_expenses),
+            icon: TrendingDown,
+            description: "Total recorded expenses"
+        },
+        {
+            title: "Savings",
+            value: formatCurrency(report.summary.savings),
+            icon: Wallet,
+            description: "Income minus expenses"
+        },
+        {
+            title: "Savings Rate",
+            value: formatPercentage(report.summary.savings_rate),
+            icon: Percent,
+            description: "Average savings rate"
+        },
+    ];
 
     return (
         <div className="space-y-6">
@@ -165,73 +198,18 @@ export default function FinancialReportView({
 
             {/* Summary */}
 
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-
-                <Card>
-                    <CardHeader>
-                        <CardTitle className="text-sm">
-                            Total Income
-                        </CardTitle>
-                    </CardHeader>
-
-                    <CardContent>
-                        <p className="text-2xl font-bold">
-                            {formatCurrency(
-                                report.summary.total_income
-                            )}
-                        </p>
-                    </CardContent>
-                </Card>
-
-                <Card>
-                    <CardHeader>
-                        <CardTitle className="text-sm">
-                            Total Expenses
-                        </CardTitle>
-                    </CardHeader>
-
-                    <CardContent>
-                        <p className="text-2xl font-bold">
-                            {formatCurrency(
-                                report.summary.total_expenses
-                            )}
-                        </p>
-                    </CardContent>
-                </Card>
-
-                <Card>
-                    <CardHeader>
-                        <CardTitle className="text-sm">
-                            Savings
-                        </CardTitle>
-                    </CardHeader>
-
-                    <CardContent>
-                        <p className="text-2xl font-bold">
-                            {formatCurrency(
-                                report.summary.savings
-                            )}
-                        </p>
-                    </CardContent>
-                </Card>
-
-                <Card>
-                    <CardHeader>
-                        <CardTitle className="text-sm">
-                            Savings Rate
-                        </CardTitle>
-                    </CardHeader>
-
-                    <CardContent>
-                        <p className="text-2xl font-bold">
-                            {formatPercentage(
-                                report.summary.savings_rate
-                            )}
-                        </p>
-                    </CardContent>
-                </Card>
-
-            </div>
+            <AnimatedSummaryCards className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                {cardsData.map(card => (
+                    <AnimatedSummaryCard key={card.title}>
+                        <SummaryCard 
+                            title={card.title}
+                            value={card.value}
+                            description={card.description}
+                            icon={card.icon}
+                        />
+                    </AnimatedSummaryCard>
+                ))}
+            </AnimatedSummaryCards>
 
             {/* Verdict */}
 
@@ -272,172 +250,128 @@ export default function FinancialReportView({
             {/* Expense Breakdown */}
 
             <div className="grid gap-6 lg:grid-cols-2">
-
-                <Card>
-
-                    <CardHeader>
-                        <CardTitle>
-                            Expense Breakdown
-                        </CardTitle>
-                    </CardHeader>
-
-                    <CardContent>
-
-                        <div className="h-[300px]">
-
-                            <ResponsiveContainer
-                                width="100%"
-                                height="100%"
-                            >
-
-                                <PieChart>
-
-                                    <Pie
-                                        data={chartData}
-                                        dataKey="total"
-                                        nameKey="category"
-                                        cx="50%"
-                                        cy="50%"
-                                        outerRadius={100}
-                                        label={({ payload: { percentage } }) => formatPercentage(Number(percentage))}
-                                    />
-
-                                    <Tooltip
-                                        formatter={(value) =>
-                                            formatCurrency(
-                                                Number(value)
-                                            )
-                                        }
-                                    />
-                                    <Legend />
-                                </PieChart>
-
-                            </ResponsiveContainer>
-
-                        </div>
-
-                    </CardContent>
-
-                </Card>
-
-
+                <AnimatedCard>
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>
+                                Expense Breakdown
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="h-[300px]">
+                                <ResponsiveContainer
+                                    width="100%"
+                                    height="100%"
+                                >
+                                    <PieChart>
+                                        <Pie
+                                            data={chartData}
+                                            dataKey="total"
+                                            nameKey="category"
+                                            cx="50%"
+                                            cy="50%"
+                                            outerRadius={100}
+                                            label={({ payload: { percentage } }) => formatPercentage(Number(percentage))}
+                                        />
+                                        <Tooltip
+                                            formatter={(value) =>
+                                                formatCurrency(
+                                                    Number(value)
+                                                )
+                                            }
+                                        />
+                                        <Legend />
+                                    </PieChart>
+                                </ResponsiveContainer>
+                            </div>
+                        </CardContent>
+                    </Card>
+                </AnimatedCard>
                 {/* Expense Categories */}
+                <AnimatedCard>
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>
+                                Expense Categories
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="space-y-4">
+                                {report.expense_breakdown.map(
+                                    (item) => (
 
-                <Card>
+                                        <div
+                                            key={item.category}
+                                            className="space-y-2"
+                                        >
+                                            <div className="flex items-center justify-between">
+                                                <span className="text-sm font-medium">
+                                                    {item.category}
+                                                </span>
 
-                    <CardHeader>
-                        <CardTitle>
-                            Expense Categories
-                        </CardTitle>
-                    </CardHeader>
-
-                    <CardContent>
-
-                        <div className="space-y-4">
-
-                            {report.expense_breakdown.map(
-                                (item) => (
-
-                                    <div
-                                        key={item.category}
-                                        className="space-y-2"
-                                    >
-
-                                        <div className="flex items-center justify-between">
-
-                                            <span className="text-sm font-medium">
-                                                {item.category}
-                                            </span>
-
-                                            <span className="text-sm text-muted-foreground">
-                                                {formatPercentage(
-                                                    item.percentage
-                                                )}
-                                            </span>
-
+                                                <span className="text-sm text-muted-foreground">
+                                                    {formatPercentage(
+                                                        item.percentage
+                                                    )}
+                                                </span>
+                                            </div>
+                                            <div className="flex items-center justify-between text-sm">
+                                                <span className="text-muted-foreground">
+                                                    Total
+                                                </span>
+                                                <span className="font-medium">
+                                                    {formatCurrency(
+                                                        item.total
+                                                    )}
+                                                </span>
+                                            </div>
                                         </div>
+                                    )
+                                )}
+                            </div>
+                        </CardContent>
 
-                                        <div className="flex items-center justify-between text-sm">
-
-                                            <span className="text-muted-foreground">
-                                                Total
-                                            </span>
-
-                                            <span className="font-medium">
-                                                {formatCurrency(
-                                                    item.total
-                                                )}
-                                            </span>
-
-                                        </div>
-
-                                    </div>
-
-                                )
-                            )}
-
-                        </div>
-
-                    </CardContent>
-
-                </Card>
-
+                    </Card>
+                </AnimatedCard>
             </div>
 
-
             {/* Income */}
-
-            <Card>
-
-                <CardHeader>
-                    <CardTitle>
-                        Income Sources
-                    </CardTitle>
-                </CardHeader>
-
-                <CardContent>
-
-                    {report.income.length === 0 ? (
-
-                        <p className="text-sm text-muted-foreground">
-                            No income entries found.
-                        </p>
-
-                    ) : (
-
-                        <div className="divide-y">
-
-                            {report.income.map(
-                                (income, index) => (
-
-                                    <div
-                                        key={`${income.source}-${index}`}
-                                        className="flex items-center justify-between py-3"
-                                    >
-
-                                        <span className="font-medium">
-                                            {income.source}
-                                        </span>
-
-                                        <span className="font-semibold">
-                                            {formatCurrency(
-                                                income.amount
-                                            )}
-                                        </span>
-
-                                    </div>
-
-                                )
-                            )}
-
-                        </div>
-
-                    )}
-
-                </CardContent>
-
-            </Card>
-
+            <AnimatedCard>
+                <Card>
+                    <CardHeader>
+                        <CardTitle>
+                            Income Sources
+                        </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        {report.income.length === 0 ? (
+                            <p className="text-sm text-muted-foreground">
+                                No income entries found.
+                            </p>
+                        ) : (
+                            <div className="divide-y">
+                                {report.income.map(
+                                    (income, index) => (
+                                        <div
+                                            key={`${income.source}-${index}`}
+                                            className="flex items-center justify-between py-3"
+                                        >
+                                            <span className="font-medium">
+                                                {income.source}
+                                            </span>
+                                            <span className="font-semibold">
+                                                {formatCurrency(
+                                                    income.amount
+                                                )}
+                                            </span>
+                                        </div>
+                                    )
+                                )}
+                            </div>
+                        )}
+                    </CardContent>
+                </Card>
+            </AnimatedCard>
         </div>
     );
 }

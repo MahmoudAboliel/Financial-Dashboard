@@ -4,10 +4,11 @@ import { Bell, User } from "lucide-react";
 
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Separator } from "@/components/ui/separator";
+import ThemeToggle from "./ThemeToggle";
 
 export default function AppHeader() {
     return (
-        <header className="flex sticky top-0 z-10 bg-gray-50 h-16 shrink-0 items-center justify-between border-b px-4">
+        <header className="flex sticky top-0 z-10 bg-muted h-16 shrink-0 items-center justify-between border-b px-4">
 
             <div className="flex items-center gap-2">
                 <SidebarTrigger />
@@ -23,7 +24,7 @@ export default function AppHeader() {
             </div>
 
             <div className="flex items-center gap-4">
-
+                <ThemeToggle />
                 <button
                     className="text-muted-foreground hover:text-foreground"
                     aria-label="Notifications"

@@ -21,6 +21,7 @@ import {
 import type { ClientFinancialMonth } from "@/types/client";
 
 import { formatPercentage } from "@/lib/format";
+import AnimatedCard from "../shared/AnimatedCard";
 
 interface ClientSavingsRateChartProps {
     months: ClientFinancialMonth[];
@@ -41,79 +42,81 @@ export default function ClientSavingsRateChart({
         );
 
     return (
-        <Card>
+        <AnimatedCard>
+            <Card>
 
-            <CardHeader>
+                <CardHeader>
 
-                <CardTitle>
-                    Savings Rate
-                </CardTitle>
+                    <CardTitle>
+                        Savings Rate
+                    </CardTitle>
 
-                <CardDescription>
-                    Savings rate performance over time
-                </CardDescription>
+                    <CardDescription>
+                        Savings rate performance over time
+                    </CardDescription>
 
-            </CardHeader>
+                </CardHeader>
 
-            <CardContent>
+                <CardContent>
 
-                <div className="h-[300px]">
+                    <div className="h-[300px]">
 
-                    <ResponsiveContainer
-                        width="100%"
-                        height="100%"
-                    >
-
-                        <LineChart
-                            data={chartData}
-                            margin={{
-                                top: 20,
-                                right: 20,
-                                left: 10,
-                                bottom: 5,
-                            }}
+                        <ResponsiveContainer
+                            width="100%"
+                            height="100%"
                         >
 
-                            <CartesianGrid
-                                strokeDasharray="3 3"
-                            />
+                            <LineChart
+                                data={chartData}
+                                margin={{
+                                    top: 20,
+                                    right: 20,
+                                    left: 10,
+                                    bottom: 5,
+                                }}
+                            >
 
-                            <XAxis
-                                dataKey="month"
-                            />
+                                <CartesianGrid
+                                    strokeDasharray="3 3"
+                                />
 
-                            <YAxis
-                                tickFormatter={(value) =>
-                                    `${value}%`
-                                }
-                            />
+                                <XAxis
+                                    dataKey="month"
+                                />
 
-                            <Tooltip
-                                formatter={(value) =>
-                                    formatPercentage(
-                                        Number(value)
-                                    )
-                                }
-                            />
+                                <YAxis
+                                    tickFormatter={(value) =>
+                                        `${value}%`
+                                    }
+                                />
 
-                            <Line
-                                type="monotone"
-                                dataKey="savingsRate"
-                                name="Savings Rate"
-                                stroke="hsl(142 71% 45%)"
-                                strokeWidth={2}
-                                dot={{ r: 4 }}
-                                activeDot={{ r: 6 }}
-                            />
+                                <Tooltip
+                                    formatter={(value) =>
+                                        formatPercentage(
+                                            Number(value)
+                                        )
+                                    }
+                                />
 
-                        </LineChart>
+                                <Line
+                                    type="monotone"
+                                    dataKey="savingsRate"
+                                    name="Savings Rate"
+                                    stroke="hsl(142 71% 45%)"
+                                    strokeWidth={2}
+                                    dot={{ r: 4 }}
+                                    activeDot={{ r: 6 }}
+                                />
 
-                    </ResponsiveContainer>
+                            </LineChart>
 
-                </div>
+                        </ResponsiveContainer>
 
-            </CardContent>
+                    </div>
 
-        </Card>
+                </CardContent>
+
+            </Card>
+        </AnimatedCard>
     );
 }

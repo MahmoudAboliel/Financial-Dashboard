@@ -9,6 +9,7 @@ import {
 import type { ClientListItem } from "@/types/client";
 import { formatPercentage } from "@/lib/format";
 import SummaryCard from "../dashboard/SummaryCard";
+import AnimatedSummaryCards, { AnimatedSummaryCard } from "../shared/AnimatedSummaryCards";
 
 
 interface ClientsStatsProps {
@@ -41,7 +42,7 @@ export default function ClientsStats({
               ) / clients.length
             : 0;
 
-    const stats = [
+    const status = [
         {
             title: "Total Clients",
             value: totalClients.toString(),
@@ -71,18 +72,17 @@ export default function ClientsStats({
     ];
 
     return (
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-
-            {stats.map((stat) => (
-                <SummaryCard 
-                    key={stat.title}
-                    title={stat.title}
-                    value={stat.value}
-                    description={stat.description}
-                    icon={stat.icon}
-                />
+        <AnimatedSummaryCards className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {status.map((state) => (
+                <AnimatedSummaryCard key={state.title}>
+                    <SummaryCard 
+                        title={state.title}
+                        value={state.value}
+                        description={state.description}
+                        icon={state.icon}
+                    />
+                </AnimatedSummaryCard>
             ))}
-
-        </div>
+        </AnimatedSummaryCards>
     );
 }

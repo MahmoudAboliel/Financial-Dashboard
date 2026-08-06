@@ -108,8 +108,8 @@ export default function ClientsTable({
                     <CardTitle>
                         Clients
                     </CardTitle>
-                    <div className="flex min-w-0 flex-col gap-2 sm:flex-row">
-                        <div className="relative min-w-0 w-full sm:w-[360px]">
+                    <div className="flex min-w-0 flex-col md:flex-row gap-2 ">
+                        <div className="relative min-w-0 w-[200px]">
                             <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
                             <Input
                                 placeholder="Search clients..."
@@ -125,7 +125,7 @@ export default function ClientsTable({
                             value={verdictFilter}
                             onValueChange={(event) => setVerdictFilter(event)}
                         >
-                            <SelectTrigger className="w-full sm:w-[180px]">
+                            <SelectTrigger className="w-[200px]">
                                 <SelectValue placeholder="Filter verdict" />
                             </SelectTrigger>
                             <SelectContent>
@@ -140,21 +140,21 @@ export default function ClientsTable({
                 </div>
             </CardHeader>
 
-            <CardContent className="min-w-0">
+            <CardContent className="">
+                
+                <div className="overflow-x-auto">
 
-                <div className="w-full min-w-0 overflow-x-auto">
-
-                    <table className="w-full min-w-[750px] text-sm">
+                    <table className="text-sm w-full">
 
                         <thead>
 
                             <tr className="border-b">
 
-                                <th className="px-4 py-3 text-left">
+                                <th className="px-2 py-3 text-left">
                                     Client
                                 </th>
 
-                                <th className="px-4 py-3 text-right">
+                                <th className="px-2 py-3 text-right">
                                     <SortButton
                                         label="Income"
                                         onClick={() =>
@@ -163,7 +163,7 @@ export default function ClientsTable({
                                     />
                                 </th>
 
-                                <th className="px-4 py-3 text-right">
+                                <th className="px-2 py-3 text-right">
                                     <SortButton
                                         label="Expenses"
                                         onClick={() =>
@@ -172,7 +172,7 @@ export default function ClientsTable({
                                     />
                                 </th>
 
-                                <th className="px-4 py-3 text-right">
+                                <th className="px-2 py-3 text-right">
                                     <SortButton
                                         label="Savings"
                                         onClick={() =>
@@ -181,7 +181,7 @@ export default function ClientsTable({
                                     />
                                 </th>
 
-                                <th className="px-4 py-3 text-right">
+                                <th className="px-2 py-3 text-right">
                                     <SortButton
                                         label="Avg. Rate"
                                         onClick={() =>
@@ -190,11 +190,11 @@ export default function ClientsTable({
                                     />
                                 </th>
 
-                                <th className="px-4 py-3 text-center">
+                                <th className="px-2 py-3 text-center">
                                     Verdict
                                 </th>
 
-                                <th className="px-4 py-3 text-right">
+                                <th className="px-2 py-3 text-right">
                                     Actions
                                 </th>
 
@@ -212,9 +212,9 @@ export default function ClientsTable({
                                         className="border-b last:border-0"
                                     >
 
-                                        <td className="px-4 py-4">
+                                        <td className="px-2 py-4">
 
-                                            <div>
+                                            <div className="space-y-2">
 
                                                 <p className="font-medium">
                                                     {client.full_name}
@@ -229,31 +229,31 @@ export default function ClientsTable({
 
                                         </td>
 
-                                        <td className="px-4 py-4 text-right">
+                                        <td className="px-2 py-4 text-right">
                                             {formatCurrency(
                                                 client.financial.total_income
                                             )}
                                         </td>
 
-                                        <td className="px-4 py-4 text-right">
+                                        <td className="px-2 py-4 text-right">
                                             {formatCurrency(
                                                 client.financial.total_expenses
                                             )}
                                         </td>
 
-                                        <td className="px-4 py-4 text-right font-medium">
+                                        <td className="px-2 py-4 text-right font-medium">
                                             {formatCurrency(
                                                 client.financial.total_savings
                                             )}
                                         </td>
 
-                                        <td className="px-4 py-4 text-right">
+                                        <td className="px-2 py-4 text-right">
                                             {formatPercentage(
                                                 client.financial.average_savings_rate
                                             )}
                                         </td>
 
-                                        <td className="px-4 py-4 text-center">
+                                        <td className="px-2 py-4 text-center">
 
                                             {client.latest_report ? (
 
@@ -276,7 +276,7 @@ export default function ClientsTable({
 
                                         </td>
 
-                                        <td className="px-4 py-4 text-right">
+                                        <td className="px-2 py-4 text-right">
 
                                             <Link
                                                 className="inline-flex size-9 items-center justify-center rounded-md hover:bg-accent"

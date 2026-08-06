@@ -139,12 +139,12 @@ export default function ClientFinancialHistory({
                                                 </div>
                                             )}
                                             <Link
-                                                className="inline-flex items-center justify-center rounded-md hover:bg-accent border border-gray-200 py-0.75 px-2"
+                                                className="inline-flex items-center justify-center rounded-md hover:bg-accent border text-[13px] py-1 px-2"
                                                 
                                                 href={`/financial-months/${month.id}`}
                                             >
                                                 <Eye className="mr-2 size-4" />
-                                                View Report
+                                                View
                                             </Link>
                                             <Button
                                                 variant="outline"

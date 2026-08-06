@@ -20,6 +20,8 @@ import {
     formatCurrency,
     formatPercentage,
 } from "@/lib/format";
+import AnimatedSummaryCards, { AnimatedSummaryCard } from "../shared/AnimatedSummaryCards";
+import SummaryCard from "../dashboard/SummaryCard";
 
 interface ClientFinancialSummaryProps {
     months: ClientFinancialMonth[];
@@ -104,42 +106,20 @@ export default function ClientFinancialSummary({
     ];
 
     return (
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <AnimatedSummaryCards className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
 
-            {cards.map((card) => {
+            {cards.map((card) => (
+                    <AnimatedSummaryCard key={card.title}>
+                        <SummaryCard 
+                            title={card.title}
+                            value={card.value}
+                            icon={card.icon}
+                            description={`Based on ${reports.length} financial month ${reports.length !== 1 ? "s" : ""}`}
+                        />
+                    </AnimatedSummaryCard>
+                )
+            )}
 
-                const Icon = card.icon;
-
-                return (
-                    <Card key={card.title}>
-
-                        <CardHeader className="flex flex-row items-center justify-between pb-2">
-
-                            <CardTitle className="text-sm font-medium">
-                                {card.title}
-                            </CardTitle>
-
-                            <Icon className="size-4 text-muted-foreground" />
-
-                        </CardHeader>
-
-                        <CardContent>
-
-                            <div className="text-2xl font-bold">
-                                {card.value}
-                            </div>
-
-                            <p className="text-xs text-muted-foreground">
-                                Based on {reports.length} financial month
-                                {reports.length !== 1 ? "s" : ""}
-                            </p>
-
-                        </CardContent>
-
-                    </Card>
-                );
-            })}
-
-        </div>
+        </AnimatedSummaryCards>
     );
 }

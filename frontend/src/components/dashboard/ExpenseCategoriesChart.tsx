@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/card";
 import type { ExpenseCategory } from "@/types/dashboard";
 import { formatCurrency, formatPercentage } from "@/lib/format";
+import AnimatedCard from "../shared/AnimatedCard";
 
 
 interface ExpenseCategoriesChartProps {
@@ -35,58 +36,60 @@ export default function ExpenseCategoriesChart({
     }))
 
     return (
-        <Card className="h-full">
+        <AnimatedCard>
+            <Card className="h-full">
 
-            <CardHeader>
-                <CardTitle>
-                    Expense Categories
-                </CardTitle>
+                <CardHeader>
+                    <CardTitle>
+                        Expense Categories
+                    </CardTitle>
 
-                <CardDescription>
-                    Distribution of total expenses by category
-                </CardDescription>
-            </CardHeader>
+                    <CardDescription>
+                        Distribution of total expenses by category
+                    </CardDescription>
+                </CardHeader>
 
-            <CardContent>
+                <CardContent>
 
-                <div className="h-[350px]">
+                    <div className="h-[350px]">
 
-                    <ResponsiveContainer
-                        width="100%"
-                        height="100%"
-                    >
+                        <ResponsiveContainer
+                            width="100%"
+                            height="100%"
+                        >
 
-                        <PieChart>
+                            <PieChart>
 
-                            <Pie
-                                data={charData}
-                                dataKey="total"
-                                nameKey="category"
-                                cx="50%"
-                                cy="50%"
-                                outerRadius={120}
-                                innerRadius={70}
-                                paddingAngle={2}
-                                
-                                label={({ payload: { percentage } }) => formatPercentage(Number(percentage))}
-                            />
+                                <Pie
+                                    data={charData}
+                                    dataKey="total"
+                                    nameKey="category"
+                                    cx="50%"
+                                    cy="50%"
+                                    outerRadius={120}
+                                    innerRadius={70}
+                                    paddingAngle={2}
+                                    
+                                    label={({ payload: { percentage } }) => formatPercentage(Number(percentage))}
+                                />
 
-                            <Tooltip
-                                formatter={(value) =>
-                                    formatCurrency(Number(value))
-                                }
-                            />
+                                <Tooltip
+                                    formatter={(value) =>
+                                        formatCurrency(Number(value))
+                                    }
+                                />
 
-                            <Legend />
+                                <Legend />
 
-                        </PieChart>
+                            </PieChart>
 
-                    </ResponsiveContainer>
+                        </ResponsiveContainer>
 
-                </div>
+                    </div>
 
-            </CardContent>
+                </CardContent>
 
-        </Card>
+            </Card>
+        </AnimatedCard>
     );
 }

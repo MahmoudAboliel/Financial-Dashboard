@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/card";
 import type { IncomeVsExpenses } from "@/types/dashboard";
 import { formatCurrency } from "@/lib/format";
+import AnimatedCard from "../shared/AnimatedCard";
 
 
 interface IncomeVsExpensesChartProps {
@@ -38,91 +39,93 @@ export default function IncomeVsExpensesChart({
     ];
 
     return (
-        <Card className="h-full">
+        <AnimatedCard>
+            <Card className="h-full">
 
-            <CardHeader>
+                <CardHeader>
 
-                <CardTitle>
-                    Income vs Expenses
-                </CardTitle>
+                    <CardTitle>
+                        Income vs Expenses
+                    </CardTitle>
 
-                <CardDescription>
-                    Comparison between total income and expenses
-                </CardDescription>
+                    <CardDescription>
+                        Comparison between total income and expenses
+                    </CardDescription>
 
-            </CardHeader>
+                </CardHeader>
 
-            <CardContent>
+                <CardContent>
 
-                <div className="h-[350px]">
+                    <div className="h-[350px]">
 
-                    <ResponsiveContainer
-                        width="100%"
-                        height="100%"
-                    >
-
-                        <BarChart
-                            data={chartData}
-                            margin={{
-                                top: 20,
-                                right: 20,
-                                left: 10,
-                                bottom: 5,
-                            }}
+                        <ResponsiveContainer
+                            width="100%"
+                            height="100%"
                         >
 
-                            <CartesianGrid
-                                strokeDasharray="3 3"
-                            />
+                            <BarChart
+                                data={chartData}
+                                margin={{
+                                    top: 20,
+                                    right: 20,
+                                    left: 10,
+                                    bottom: 5,
+                                }}
+                            >
 
-                            <XAxis
-                                dataKey="name"
-                            />
+                                <CartesianGrid
+                                    strokeDasharray="3 3"
+                                />
 
-                            <YAxis
-                                tickFormatter={(value) =>
-                                    Number(value).toLocaleString("en-US")
-                                }
-                            />
+                                <XAxis
+                                    dataKey="name"
+                                />
 
-                            <Tooltip
-                                formatter={(value) =>
-                                    formatCurrency(Number(value))
-                                }
-                            />
+                                <YAxis
+                                    tickFormatter={(value) =>
+                                        Number(value).toLocaleString("en-US")
+                                    }
+                                />
 
-                            <Bar
-                                dataKey="Income"
-                                fill="var(--chart-2)"
-                                radius={[6, 6, 0, 0]}
-                            />
+                                <Tooltip
+                                    formatter={(value) =>
+                                        formatCurrency(Number(value))
+                                    }
+                                />
 
-                            <Bar
-                                dataKey="Expenses"
-                                fill="var(--chart-4)"
-                                radius={[6, 6, 0, 0]}
-                            />
+                                <Bar
+                                    dataKey="Income"
+                                    fill="var(--chart-2)"
+                                    radius={[6, 6, 0, 0]}
+                                />
 
-                        </BarChart>
+                                <Bar
+                                    dataKey="Expenses"
+                                    fill="var(--chart-4)"
+                                    radius={[6, 6, 0, 0]}
+                                />
 
-                    </ResponsiveContainer>
+                            </BarChart>
 
-                </div>
+                        </ResponsiveContainer>
 
-                <div className="mt-4 flex justify-between border-t pt-4 text-sm">
+                    </div>
 
-                    <span className="text-muted-foreground">
-                        Balance
-                    </span>
+                    <div className="mt-4 flex justify-between border-t pt-4 text-sm">
 
-                    <span className="font-semibold">
-                        {formatCurrency(data.balance)}
-                    </span>
+                        <span className="text-muted-foreground">
+                            Balance
+                        </span>
 
-                </div>
+                        <span className="font-semibold">
+                            {formatCurrency(data.balance)}
+                        </span>
 
-            </CardContent>
+                    </div>
 
-        </Card>
+                </CardContent>
+
+            </Card>
+        </AnimatedCard>
     );
 }

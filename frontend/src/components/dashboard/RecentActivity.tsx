@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 
 import type { RecentActivity as RecentActivityItem } from "@/types/dashboard";
+import AnimatedCard from "../shared/AnimatedCard";
 
 interface RecentActivityProps {
     data: RecentActivityItem[];
@@ -32,83 +33,85 @@ export default function RecentActivity({
 }: RecentActivityProps) {
 
     return (
-        <Card>
+        <AnimatedCard>
+            <Card>
 
-            <CardHeader>
+                <CardHeader>
 
-                <CardTitle>
-                    Recent Activity
-                </CardTitle>
+                    <CardTitle>
+                        Recent Activity
+                    </CardTitle>
 
-                <CardDescription>
-                    Latest activity across the system
-                </CardDescription>
+                    <CardDescription>
+                        Latest activity across the system
+                    </CardDescription>
 
-            </CardHeader>
+                </CardHeader>
 
-            <CardContent>
+                <CardContent>
 
-                <div className="space-y-6">
+                    <div className="space-y-6">
 
-                    {data.map((activity, index) => {
+                        {data.map((activity, index) => {
 
-                        const isClient =
-                            activity.type === "client";
+                            const isClient =
+                                activity.type === "client";
 
-                        const Icon = isClient
-                            ? UserPlus
-                            : Upload;
+                            const Icon = isClient
+                                ? UserPlus
+                                : Upload;
 
-                        return (
-                            <div
-                                key={`${activity.created_at}-${index}`}
-                                className="flex gap-4"
-                            >
+                            return (
+                                <div
+                                    key={`${activity.created_at}-${index}`}
+                                    className="flex gap-4"
+                                >
 
-                                <div className="flex size-9 shrink-0 items-center justify-center rounded-full bg-muted">
+                                    <div className="flex size-9 shrink-0 items-center justify-center rounded-full bg-muted">
 
-                                    <Icon className="size-4" />
-
-                                </div>
-
-                                <div className="min-w-0 flex-1">
-
-                                    <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-
-                                        <p className="font-medium">
-                                            {activity.description}
-                                        </p>
-
-                                        <span className="text-xs text-muted-foreground">
-                                            {formatDate(activity.created_at)}
-                                        </span>
+                                        <Icon className="size-4" />
 
                                     </div>
 
-                                    <div className="mt-1 flex flex-wrap gap-x-3 text-xs text-muted-foreground">
+                                    <div className="min-w-0 flex-1">
 
-                                        <span>
-                                            {activity.client}
-                                        </span>
+                                        <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
 
-                                        {activity.month && (
-                                            <span>
-                                                {activity.month}
+                                            <p className="font-medium">
+                                                {activity.description}
+                                            </p>
+
+                                            <span className="text-xs text-muted-foreground">
+                                                {formatDate(activity.created_at)}
                                             </span>
-                                        )}
+
+                                        </div>
+
+                                        <div className="mt-1 flex flex-wrap gap-x-3 text-xs text-muted-foreground">
+
+                                            <span>
+                                                {activity.client}
+                                            </span>
+
+                                            {activity.month && (
+                                                <span>
+                                                    {activity.month}
+                                                </span>
+                                            )}
+
+                                        </div>
 
                                     </div>
 
                                 </div>
+                            );
+                        })}
 
-                            </div>
-                        );
-                    })}
+                    </div>
 
-                </div>
+                </CardContent>
 
-            </CardContent>
-
-        </Card>
+            </Card>
+        </AnimatedCard>
     );
 }

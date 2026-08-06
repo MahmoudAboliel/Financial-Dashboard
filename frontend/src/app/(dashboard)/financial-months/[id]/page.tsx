@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 
 import { getFinancialReport } from "@/services/client.service";
 import FinancialReportView from "@/components/reports/FinancialReportView";
+import PageAnimation from "@/components/shared/PageAnimation";
 
 interface FinancialReportPageProps {
     params: Promise<{
@@ -21,19 +22,18 @@ export default async function FinancialReportPage({
         notFound();
     }
 
-    try {
-        const report = await getFinancialReport(
-            financialMonthId
-        );
+    const report = await getFinancialReport(
+        financialMonthId
+    );
 
-        return (
-            // eslint-disable-next-line react-hooks/error-boundaries
+    if (!report) notFound()
+
+    return (
+        <PageAnimation>
             <FinancialReportView
                 report={report}
                 financialMonthId={id as unknown as number}
             />
-        );
-    } catch {
-        notFound();
-    }
+        </PageAnimation>
+    );
 }
