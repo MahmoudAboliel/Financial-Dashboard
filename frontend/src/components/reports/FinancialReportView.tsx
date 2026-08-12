@@ -9,7 +9,8 @@ import {
     TrendingUp,
     TrendingDown,
      Wallet,
-    Percent
+    Percent,
+    FileText
 } from "lucide-react";
 
 import {
@@ -21,7 +22,7 @@ import {
 
 import { Button } from "@/components/ui/button";
 
-import type { FinancialReport } from "@/types/client";
+import type { ClientInfoItem, FinancialReport } from "@/types/client";
 
 import {
     formatCurrency,
@@ -44,6 +45,8 @@ import {
 import AnimatedSummaryCards, { AnimatedSummaryCard } from "../shared/AnimatedSummaryCards";
 import SummaryCard from "../dashboard/SummaryCard";
 import AnimatedCard from "../shared/AnimatedCard";
+import PageTitle from "../shared/PageTitle";
+import ClientInfo from "../clients/ClientInfo";
 
 interface FinancialReportViewProps {
     report: FinancialReport;
@@ -92,6 +95,23 @@ export default function FinancialReportView({
         },
     ];
 
+    const clientInfoData: ClientInfoItem[] = [
+        {
+            title: "Name",
+            value: report.client.full_name ?? "—",
+        },
+        {
+            title: "Phone",
+            value: report.client.phone ?? "—",
+            Icon: Phone
+        },
+        {
+            title: "Email",
+            value: report.client.email ?? "—",
+            Icon: Mail
+        },
+    ];
+
     return (
         <div className="space-y-6">
 
@@ -107,16 +127,10 @@ export default function FinancialReportView({
                     >
                         <ArrowLeft className="size-4" />
                     </Link>
-                    
-                    <div>
-                        <h2 className="text-3xl font-bold tracking-tight">
-                            Financial Report
-                        </h2>
-
-                        <p className="text-muted-foreground">
-                            {report.client.full_name} · {monthLabel}
-                        </p>
-                    </div>
+                    <PageTitle 
+                        title="Financial Report"
+                        description={`${report.client.full_name} · ${monthLabel}`}
+                    />
 
                 </div>
 
@@ -136,65 +150,10 @@ export default function FinancialReportView({
 
             {/* Client */}
 
-            <Card>
-
-                <CardHeader>
-                    <CardTitle>
-                        Client Information
-                    </CardTitle>
-                </CardHeader>
-
-                <CardContent>
-
-                    <div className="grid gap-4 md:grid-cols-3">
-
-                        <div>
-                            <p className="text-xs text-muted-foreground">
-                                Name
-                            </p>
-
-                            <p className="font-medium">
-                                {report.client.full_name}
-                            </p>
-                        </div>
-
-                        <div className="flex items-center gap-2">
-
-                            <Phone className="size-4 text-muted-foreground" />
-
-                            <div>
-                                <p className="text-xs text-muted-foreground">
-                                    Phone
-                                </p>
-
-                                <p className="font-medium">
-                                    {report.client.phone ?? "—"}
-                                </p>
-                            </div>
-
-                        </div>
-
-                        <div className="flex items-center gap-2">
-
-                            <Mail className="size-4 text-muted-foreground" />
-
-                            <div>
-                                <p className="text-xs text-muted-foreground">
-                                    Email
-                                </p>
-
-                                <p className="font-medium">
-                                    {report.client.email ?? "—"}
-                                </p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </CardContent>
-
-            </Card>
+            <ClientInfo 
+                cardTitle="Client Information"
+                items={clientInfoData}
+            />
 
             {/* Summary */}
 
@@ -232,14 +191,18 @@ export default function FinancialReportView({
                     </span>
 
                     <div className="rounded-md bg-muted/50 p-4">
+                        <div className="flex gap-3">
+                            <FileText className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
+                            <div>
+                                <p className="text-sm font-medium">
+                                    Insight
+                                </p>
 
-                        <p className="text-sm font-medium">
-                            Insight
-                        </p>
-
-                        <p className="mt-1 text-sm text-muted-foreground">
-                            {report.summary.insight}
-                        </p>
+                                <p className="mt-1 text-sm text-muted-foreground">
+                                    {report.summary.insight}
+                                </p>
+                            </div>
+                        </div>
 
                     </div>
 

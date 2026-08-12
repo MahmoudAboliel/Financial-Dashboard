@@ -2,6 +2,7 @@ import ClientsTable from "@/components/clients/ClientsTable";
 import { getClients } from "@/services/client.service";
 import ClientsStats from "@/components/clients/ClientsStats";
 import PageAnimation from "@/components/shared/PageAnimation";
+import PageTitle from "@/components/shared/PageTitle";
 
 
 export default async function ClientsPage() {
@@ -11,16 +12,10 @@ export default async function ClientsPage() {
     return (
         <PageAnimation>
             <div className="space-y-6">
-
-                <div>
-                    <h1 className="text-2xl font-bold tracking-tight">
-                        Clients
-                    </h1>
-
-                    <p className="text-muted-foreground">
-                        Overview of all clients and their financial performance.
-                    </p>
-                </div>
+                <PageTitle 
+                    title="Clients"
+                    description="Overview of all clients and their financial performance."
+                />
 
                 <ClientsStats
                     clients={clients}

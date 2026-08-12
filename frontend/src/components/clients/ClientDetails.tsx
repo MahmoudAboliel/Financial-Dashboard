@@ -28,7 +28,9 @@ import ClientSavingsRateChart
     from "./ClientSavingsRateChart";
 
 import ClientFinancialHistory from "./ClientFinancialHistory";
-
+import PageTitle from "../shared/PageTitle";
+import ClientInfo from "./ClientInfo";
+import { ClientInfoItem } from "@/types/client";
 
 
 interface ClientDetailsProps {
@@ -38,6 +40,24 @@ interface ClientDetailsProps {
 export default function ClientDetails({
     client,
 }: ClientDetailsProps) {
+
+    const clientInfoData: ClientInfoItem[] = [
+        {
+            title: "Phone",
+            value: client.phone ?? "—",
+            Icon: Phone
+        },
+        {
+            title: "Email",
+            value: client.email ?? "—",
+            Icon: Mail
+        },
+        {
+            title: "Financial Months",
+            value: client.financial_months.length ?? "—",
+            Icon: CalendarDays
+        },
+    ];
 
     return (
         <div className="space-y-6">
@@ -54,18 +74,10 @@ export default function ClientDetails({
                     >
                         <ArrowLeft className="size-4" />
                     </Link>
-
-                    <div>
-
-                        <h2 className="text-3xl font-bold tracking-tight">
-                            {client.full_name}
-                        </h2>
-
-                        <p className="text-muted-foreground">
-                            Client financial overview
-                        </p>
-
-                    </div>
+                    <PageTitle 
+                        title={client.full_name}
+                        description="Client financial overview"
+                    />
 
                 </div>
 
@@ -73,85 +85,10 @@ export default function ClientDetails({
 
             {/* Client Information */}
 
-            <Card>
-
-                <CardHeader>
-                    <CardTitle>
-                        Client Information
-                    </CardTitle>
-                </CardHeader>
-
-                <CardContent>
-
-                    <div className="grid gap-4 md:grid-cols-3">
-
-                        <div className="flex items-center gap-3">
-
-                            <Phone className="size-4 text-muted-foreground" />
-
-                            <div>
-                                <p className="text-xs text-muted-foreground">
-                                    Phone
-                                </p>
-
-                                <p className="font-medium">
-                                    {client.phone ?? "—"}
-                                </p>
-                            </div>
-
-                        </div>
-
-                        <div className="flex items-center gap-3">
-
-                            <Mail className="size-4 text-muted-foreground" />
-
-                            <div>
-                                <p className="text-xs text-muted-foreground">
-                                    Email
-                                </p>
-
-                                <p className="font-medium">
-                                    {client.email ?? "—"}
-                                </p>
-                            </div>
-
-                        </div>
-
-                        <div className="flex items-center gap-3">
-
-                            <CalendarDays className="size-4 text-muted-foreground" />
-
-                            <div>
-                                <p className="text-xs text-muted-foreground">
-                                    Financial Months
-                                </p>
-
-                                <p className="font-medium">
-                                    {client.financial_months.length}
-                                </p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    {client.notes && (
-                        <div className="mt-6 border-t pt-4">
-
-                            <p className="text-xs text-muted-foreground">
-                                Notes
-                            </p>
-
-                            <p className="mt-1 text-sm">
-                                {client.notes}
-                            </p>
-
-                        </div>
-                    )}
-
-                </CardContent>
-
-            </Card>
+            <ClientInfo
+                cardTitle="Client Information"
+                items={clientInfoData}
+            />
 
             <ClientFinancialSummary
                 months={client.financial_months}

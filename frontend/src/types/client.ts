@@ -1,3 +1,5 @@
+import type { LucideIcon } from "lucide-react";
+
 export interface Client {
     id: number;
     full_name: string;
@@ -78,4 +80,10 @@ export interface FinancialReport {
         source: string;
         amount: number;
     }[];
+}
+
+export type ClientInfoItem = {
+    title: string,
+    value: string | number,
+    Icon?: LucideIcon
 }

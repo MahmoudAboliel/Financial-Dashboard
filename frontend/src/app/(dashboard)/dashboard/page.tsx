@@ -8,6 +8,7 @@ import VerdictDistributionChart from "@/components/dashboard/VerdictDistribution
 import TopClientsTable from "@/components/dashboard/TopClientsTable";
 import RecentActivity from "@/components/dashboard/RecentActivity";
 import PageAnimation from "@/components/shared/PageAnimation";
+import PageTitle from "@/components/shared/PageTitle";
 
 export default async function DashboardPage() {
 
@@ -16,16 +17,10 @@ export default async function DashboardPage() {
     return (
         <PageAnimation>
             <div className="space-y-6">
-
-                <div>
-                    <h2 className="text-3xl font-bold tracking-tight">
-                        Dashboard
-                    </h2>
-
-                    <p className="text-muted-foreground">
-                        Overview of your financial data
-                    </p>
-                </div>
+                <PageTitle 
+                    title="Dashboard"
+                    description="Overview of your financial data"
+                />
 
                 <SummaryCards
                     data={dashboard}
