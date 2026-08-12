@@ -26,6 +26,7 @@ interface Props {
 export default function RootLayout({
   children,
 }: Readonly<Props>) {
+
   return (
     <html
       lang="en"

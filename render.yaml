@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: my-flask-backend  # اختر اسماً لخدمتك
+    runtime: python
+    repo: https://github.com/your-username/your-repo # رابط المستودع
+    rootDir: backend        # <-- هذا هو السطر السحري الذي يحدد مجلد الباك إند
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app  # أو الأمر الذي تستخدمه لتشغيل Flask
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0  # حدد إصدار بايثون الذي تستخدمه

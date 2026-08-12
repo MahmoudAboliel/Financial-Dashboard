@@ -68,7 +68,7 @@ export default function IncomeVsExpensesChart({
                                 margin={{
                                     top: 20,
                                     right: 20,
-                                    left: 10,
+                                    left: 40,
                                     bottom: 5,
                                 }}
                             >
